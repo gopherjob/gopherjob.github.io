@@ -23,17 +23,18 @@ jobs:
         run: |
           pip install --upgrade pip
           pip install \
-            requests \
             jobspy \
-            v2ray2proxy \
             jobsparser \
-            python-jobspy \
-            pandas \
-            "requests[socks]" \
-            PySocks
+            python-jobspy 
 
       - name: Execute job script
         run: bash scripts/job.sh
+
+      - name: list scripts
+        run: ls scripts/job.sh
+
+      - name: list
+        run: ls .
 
       - name: Publish job results
         uses: actions/upload-artifact@v4
