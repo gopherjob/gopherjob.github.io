@@ -6,16 +6,6 @@
 countries=(
   "Berlin"
   "Germany"
-  "Netherlands"
-  "Finland"
-  "Sweden"
-  "Denmark"
-  "Norway"
-  "Estonia"
-  "Ireland"
-  "United Kingdom"
-  "Portugal"
-  "Spain"
 )
 
 # Proxy list

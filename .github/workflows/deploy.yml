@@ -54,7 +54,8 @@ jobs:
             git rm -rf .
           fi
           
-          # Copy generated HTML
+          echo -e "bin/\nstatic/\njob_results/" > .gitignore
+          
           cp -r static/html/* .
           
           git add .
