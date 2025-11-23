@@ -61,11 +61,6 @@ jobs:
           git commit -m "Update static HTML from job scan"
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/milad-rasouli/bluejob.git view --force
 
-
-
-      - name: list scripts
-        run: ls scripts/job.sh
-
       - name: list
         run: ls .
 
