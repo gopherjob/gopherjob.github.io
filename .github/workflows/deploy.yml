@@ -60,7 +60,7 @@ jobs:
           
           git add .
           git commit -m "Update static HTML from job scan"
-          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/milad-rasouli/bluejob.git view --force
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git view --force
 
       - name: list
         run: ls .
