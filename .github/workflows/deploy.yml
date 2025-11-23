@@ -41,12 +41,11 @@ jobs:
       - name: Run Go project to generate HTML
         run: ./bin/out
 
-
       - name: Commit HTML to view branch
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-
+          
           # Check if branch exists
           if git show-ref --quiet refs/heads/view; then
             git checkout view
@@ -54,13 +53,14 @@ jobs:
             git checkout --orphan view
             git rm -rf .
           fi
-
+          
           # Copy generated HTML
           cp -r static/html/* .
-
+          
           git add .
           git commit -m "Update static HTML from job scan"
-          git push origin view --force
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/milad-rasouli/bluejob.git view --force
+
 
 
       - name: list scripts
