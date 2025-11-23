@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{{ .Job.Title }}</title>
+    <style>
+        body{font-family:Inter, Arial, Helvetica, sans-serif;background:#f7fafc;color:#111;margin:0;padding:20px}
+        .wrap{max-width:900px;margin:0 auto;background:#fff;padding:20px;border-radius:8px;box-shadow:0 8px 24px rgba(12,20,30,0.06)}
+        h1{margin:0 0 8px 0}
+        .meta{color:#6b7280;font-size:13px;margin-bottom:8px}
+        .apply{display:inline-block;background:#0ea5a6;color:#fff;padding:8px 12px;border-radius:6px;text-decoration:none}
+        .back{display:inline-block;margin-left:12px;color:#374151;text-decoration:none}
+        .section{margin-top:16px}
+        .apply-section {display: flex;align-items: center;gap: 12px;}
+        .apply-section .apply {margin-left: auto;}
+        pre.desc{white-space:pre-wrap;background:#f8fafc;padding:12px;border-radius:6px;border:1px solid #eef2f7}
+        ul{padding-left:16px}
+        footer{margin-top:18px;text-align:center;color:#94a3b8}
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <h1>{{ .Job.Title }}</h1>
+    <div class="meta">Company: {{ .Job.Company }} • Location: {{ .Job.Location }} • Type: {{ .Job.Type }}</div>
+    <div class="meta">Created: <span id="createdAt">{{ .CreatedAt }}</span></div>
+
+    <div class="section apply-section">
+        <a class="back" href="../list1.html">Back to Home</a>
+        <a class="apply" href="{{ .Job.URL }}" target="_blank" rel="noopener">Apply</a>
+    </div>
+
+    <div class="section">
+        <strong>Remote:</strong> {{ if .Job.Remote }}Yes{{ else }}No{{ end }} •
+        <strong>Relocation:</strong> {{ if .Job.Relocation }}Yes{{ else }}No{{ end }}
+    </div>
+
+    <div class="section">
+        <h3>Description</h3>
+        <pre class="desc">{{ .Job.Description }}</pre>
+    </div>
+
+    <footer>
+        <a href="{{ .MyLink }}">{{ .Footer }}</a>
+    </footer>
+</div>
+
+<script>
+    (function(){
+        const el = document.getElementById('createdAt');
+        if(!el) return;
+        const ts = Number(el.textContent) * 1000;
+        const d = new Date(ts);
+        el.textContent = d.toLocaleString();
+    })();
+</script>
+</body>
+</html>
