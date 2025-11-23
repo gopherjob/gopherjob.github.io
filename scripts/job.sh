@@ -185,8 +185,8 @@ for country in "${countries[@]}"; do
     --distance 50 \
     --job-type fulltime \
     --fetch-description \
-    --hours-old 48 \
-    --max-retries 5 \
+    --hours-old 72 \
+    --max-retries 2 \
     --output-dir "job_results" \
     "${proxy_args[@]}"
 done
