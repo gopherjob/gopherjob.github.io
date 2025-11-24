@@ -14,18 +14,18 @@ if [ -z "${1:-}" ]; then
   exit 1
 fi
 
-#INPUT_PROXY="$1"
+INPUT_PROXY="$1"
 
-## Proxy list
-#proxies=(
-#  "$INPUT_PROXY"
-#)
+# Proxy list
+proxies=(
+  "$INPUT_PROXY"
+)
 
 # Build proxies args
-#proxy_args=()
-#for proxy in "${proxies[@]}"; do
-#  proxy_args+=(--proxies "$proxy")
-#done
+proxy_args=()
+for proxy in "${proxies[@]}"; do
+  proxy_args+=(--proxies "$proxy")
+done
 
 # Create unified output directory
 mkdir -p job_results
@@ -44,6 +44,5 @@ for country in "${countries[@]}"; do
     --hours-old 72 \
     --max-retries 0 \
     --output-dir "job_results" \
-    --proxies "http://mili:2rnUhgD2jO2uQAWm0aW1R8YQ@192.227.165.177:4410"
-#    "${proxy_args[@]}"
+    "${proxy_args[@]}"
 done
