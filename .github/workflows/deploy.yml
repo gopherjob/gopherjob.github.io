@@ -31,11 +31,11 @@ jobs:
             jobsparser \
             python-jobspy 
 
-#      - name: Execute job script
-#        env:
-#          PROXY_ADDRESS: ${{ secrets.PROXY_ADDRESS }}
-#        run: |
-#          bash scripts/job.sh "$PROXY_ADDRESS"
+      - name: Execute job script
+        env:
+          PROXY_ADDRESS: ${{ secrets.PROXY_ADDRESS }}
+        run: |
+          bash scripts/job.sh "$PROXY_ADDRESS"
 
       - name: Set up Go
         uses: actions/setup-go@v5

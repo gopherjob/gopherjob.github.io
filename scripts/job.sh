@@ -9,16 +9,17 @@ countries=(
 )
 
 # Validate proxy input
-if [ -z "${1:-}" ]; then
-  echo "Proxy not provided. Exiting."
-  exit 1
-fi
+#if [ -z "${1:-}" ]; then
+#  echo "Proxy not provided. Exiting."
+#  exit 1
+#fi
 
-INPUT_PROXY="$1"
+#INPUT_PROXY="$1"
 
 # Proxy list
 proxies=(
-  "$INPUT_PROXY"
+#  "$INPUT_PROXY"
+  "http://mili:2rnUhgD2jO2uQAWm0aW1R8YQ@192.227.165.177:4410"
 )
 
 # Build proxies args
@@ -44,5 +45,6 @@ for country in "${countries[@]}"; do
     --hours-old 72 \
     --max-retries 0 \
     --output-dir "job_results" \
+    -v \
     "${proxy_args[@]}"
 done
