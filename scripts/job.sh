@@ -6,6 +6,8 @@
 countries=(
   "Berlin"
   "Germany"
+  "Amsterdam"
+  "Netherlands"
 )
 
 # Validate proxy input
@@ -19,7 +21,6 @@ INPUT_PROXY="$1"
 # Proxy list
 proxies=(
   "$INPUT_PROXY"
-  "http://mili:2rnUhgD2jO2uQAWm0aW1R8YQ@192.227.165.177:4410"
 )
 
 # Build proxies args
