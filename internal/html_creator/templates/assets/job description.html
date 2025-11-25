@@ -14,8 +14,15 @@
         .section{margin-top:16px}
         .apply-section {display: flex;align-items: center;gap: 12px;}
         .apply-section .apply {margin-left: auto;}
-        pre.desc{white-space:pre-wrap;background:#f8fafc;padding:12px;border-radius:6px;border:1px solid #eef2f7}
-        ul{padding-left:16px}
+
+        /* Markdown Formatting */
+        .desc {line-height:1.6;font-size:15px;color:#111;}
+        .desc h1,.desc h2,.desc h3 {margin-top:20px;margin-bottom:10px;}
+        .desc pre{background:#f8fafc;padding:12px;border-radius:6px;border:1px solid #eef2f7;overflow-x:auto}
+        .desc code{background:#f1f5f9;padding:2px 4px;border-radius:4px}
+        .desc ul{padding-left:20px;margin:8px 0}
+        .desc p{margin:10px 0}
+
         footer{margin-top:18px;text-align:center;color:#94a3b8}
     </style>
 </head>
@@ -37,7 +44,7 @@
 
     <div class="section">
         <h3>Description</h3>
-        <pre class="desc">{{ .Job.Description }}</pre>
+        <div class="desc">{{ .DescriptionHTML }}</div>
     </div>
 
     <footer>

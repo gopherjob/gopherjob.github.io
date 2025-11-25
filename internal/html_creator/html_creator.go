@@ -1,10 +1,13 @@
 package htmlCreator
 
 import (
+	"bytes"
 	"errors"
 	"fmt"
 	"github.com/gopherjobs/gopherjobs.github.io/internal/entity"
 	"github.com/gopherjobs/gopherjobs.github.io/internal/html_creator/templates"
+	"github.com/yuin/goldmark"
+	"html/template"
 	"log/slog"
 	"os"
 	"path/filepath"
@@ -96,11 +99,12 @@ func (h *htmlCreator) Generate(jobs []*entity.Job, outputPath string) error {
 	// generate individual job pages
 	for _, job := range jobs {
 		data := map[string]interface{}{
-			"Title":     job.Title,
-			"CreatedAt": createdAt,
-			"Job":       job,
-			"MyLink":    "https://github.com/milad-rasouli",
-			"Footer":    "Created by Milad Rasouli",
+			"Title":           job.Title,
+			"CreatedAt":       createdAt,
+			"Job":             job,
+			"DescriptionHTML": h.renderMarkdown(job.Description),
+			"MyLink":          "https://github.com/milad-rasouli",
+			"Footer":          "Created by Milad Rasouli",
 		}
 
 		outFile := filepath.Join(jobsDir, fmt.Sprintf("%s.html", job.ID))
@@ -124,4 +128,12 @@ func (h *htmlCreator) Generate(jobs []*entity.Job, outputPath string) error {
 	}
 
 	return nil
+}
+
+func (h *htmlCreator) renderMarkdown(md string) template.HTML {
+	var buf bytes.Buffer
+	if err := goldmark.Convert([]byte(md), &buf); err != nil {
+		return template.HTML(md)
+	}
+	return template.HTML(buf.String())
 }
