@@ -5,25 +5,131 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>{{ .Title }}</title>
     <style>
-        body{font-family: Inter, Arial, Helvetica, sans-serif;margin:0;padding:0;background:#f7fafc;color:#1a202c}
-        .container{max-width:960px;margin:24px auto;padding:16px;background:#fff;border-radius:8px;box-shadow:0 6px 18px rgba(10,20,30,0.06)}
-        header{display:flex;justify-content:space-between;align-items:center}
-        h1{margin:0;font-size:20px}
-        .meta{color:#6b7280;font-size:13px}
-        .jobs{margin-top:16px}
-        .job{padding:12px;border-bottom:1px solid #eef2f7}
-        .job a{display:flex;gap:12px;text-decoration:none;color:inherit}
-        .job .left{flex:1}
-        .job .title{font-weight:600}
-        .job .metaSmall{color:#64748b;font-size:13px}
-        .badges{display:flex;gap:8px;align-items: center;}
-        .badge{background:#eef2ff;color:#1e40af;padding:4px 8px;border-radius:999px;font-size:12px;display: flex;align-items: center;justify-content: center;}
-        .additional{margin-top:4px;font-size:12px;color:#4b5563}
-        nav.pagination{display:flex;gap:8px;justify-content:center;margin-top:18px}
-        nav.pagination a{padding:8px 12px;background:#e6eef8;border-radius:6px;text-decoration:none;color:#0f172a}
-        footer{margin-top:20px;text-align:center;color:#94a3b8;font-size:13px}
+        body {
+            font-family: Inter, Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f7fafc;
+            color: #1a202c;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 24px auto;
+            padding: 16px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(10,20,30,0.06);
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .meta {
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        .jobs { margin-top: 20px; }
+
+        .job {
+            padding: 14px;
+            border-bottom: 1px solid #eef2f7;
+        }
+
+        .job a {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .job .title {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .job .metaSmall {
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        .additional {
+            margin-top: 4px;
+            font-size: 13px;
+            color: #4b5563;
+        }
+
+        .badges {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            align-items: flex-end;
+        }
+
+        .badge {
+            background: #eef2ff;
+            color: #1e40af;
+            padding: 4px 8px;
+            border-radius: 999px;
+            font-size: 12px;
+        }
+
+        /* Responsive Pagination */
+        nav.pagination {
+            display: flex;
+            gap: 6px;
+            justify-content: center;
+            margin-top: 22px;
+            flex-wrap: wrap;
+        }
+
+        nav.pagination a,
+        nav.pagination span {
+            padding: 8px 12px;
+            background: #e6eef8;
+            border-radius: 6px;
+            text-decoration: none;
+            color: #0f172a;
+            font-size: 14px;
+        }
+
+        nav.pagination .current {
+            background: #0ea5a6;
+            color: #fff;
+        }
+
+        nav.pagination .dots {
+            background: transparent;
+            color: #94a3b8;
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 22px; }
+            .job .title { font-size: 16px; }
+            .metaSmall, .additional { font-size: 13px; }
+        }
     </style>
 </head>
+
 <body>
 <div class="container">
     <header>
@@ -38,10 +144,10 @@
         {{ range .Jobs }}
         <div class="job">
             <a href="jobs/{{ .ID }}.html">
-                <div class="left">
+                <div>
                     <div class="title">{{ .Title }}</div>
                     <div class="metaSmall">{{ .Company }} • {{ .Location }} • {{ .Type }}</div>
-                    <div class="additional">Level: {{ .Level }} • Industry: {{ .CompanyIndustry }} </div>
+                    <div class="additional">Level: {{ .Level }} • Industry: {{ .CompanyIndustry }}</div>
                 </div>
                 <div class="badges">
                     {{ if .Remote }}<div class="badge">Remote</div>{{ end }}
@@ -52,15 +158,44 @@
         {{ end }}
     </section>
 
+    <!-- Fixed Pagination -->
     <nav class="pagination">
         {{ $page := .Page }}
         {{ $total := .TotalPages }}
+
         {{ if gt $page 1 }}
         <a href="list{{ minus $page 1 }}.html">Prev</a>
         {{ end }}
-        {{ range $i := seq 1 $total }}
+
+        {{/* Always show first page */}}
+        <a href="list1.html" {{ if eq $page 1 }}class="current"{{ end }}>1</a>
+
+        {{/* Left dots */}}
+        {{ if gt $page 4 }}
+        <span class="dots">…</span>
+        {{ end }}
+
+        {{/* Middle pages */}}
+        {{ $start := max 2 (minus $page 1) }}
+        {{ $end := min (minus $total 1) (plus $page 1) }}
+        {{ range $i := seq $start $end }}
+        {{ if eq $i $page }}
+        <span class="current">{{ $i }}</span>
+        {{ else }}
         <a href="list{{ $i }}.html">{{ $i }}</a>
         {{ end }}
+        {{ end }}
+
+        {{/* Right dots */}}
+        {{ if lt $page (minus $total 3) }}
+        <span class="dots">…</span>
+        {{ end }}
+
+        {{/* Always show last page */}}
+        {{ if gt $total 1 }}
+        <a href="list{{ $total }}.html" {{ if eq $page $total }}class="current"{{ end }}>{{ $total }}</a>
+        {{ end }}
+
         {{ if lt $page $total }}
         <a href="list{{ plus $page 1 }}.html">Next</a>
         {{ end }}
@@ -76,8 +211,7 @@
         const el = document.getElementById('createdAt');
         if(!el) return;
         const ts = Number(el.textContent) * 1000;
-        const d = new Date(ts);
-        el.textContent = d.toLocaleString();
+        el.textContent = new Date(ts).toLocaleString();
     })();
 </script>
 </body>

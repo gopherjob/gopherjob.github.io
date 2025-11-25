@@ -26,6 +26,18 @@ func loadTemplate(name string) *template.Template {
 			}
 			return r
 		},
+		"max": func(a, b int) int {
+			if a > b {
+				return a
+			}
+			return b
+		},
+		"min": func(a, b int) int {
+			if a < b {
+				return a
+			}
+			return b
+		},
 	}).ParseFS(templatesFS, "assets/"+name)
 	if err != nil {
 		log.Fatalf("Error parsing template file %s: %v", name, err)
