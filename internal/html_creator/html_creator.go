@@ -3,8 +3,8 @@ package htmlCreator
 import (
 	"errors"
 	"fmt"
-	"github.com/milad-rasouli/bluejob/internal/entity"
-	"github.com/milad-rasouli/bluejob/internal/html_creator/templates"
+	"github.com/gopherjobs/gopherjobs.github.io/internal/entity"
+	"github.com/gopherjobs/gopherjobs.github.io/internal/html_creator/templates"
 	"log/slog"
 	"os"
 	"path/filepath"

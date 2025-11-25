@@ -4,7 +4,7 @@ import (
 	"encoding/csv"
 	"errors"
 	"fmt"
-	"github.com/milad-rasouli/bluejob/internal/entity"
+	"github.com/gopherjobs/gopherjobs.github.io/internal/entity"
 	"log/slog"
 	"os"
 	"path/filepath"

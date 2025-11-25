@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	htmlCreator "github.com/milad-rasouli/bluejob/internal/html_creator"
-	jobReader2 "github.com/milad-rasouli/bluejob/internal/job_reader"
+	htmlCreator "github.com/gopherjobs/gopherjobs.github.io/internal/html_creator"
+	jobReader2 "github.com/gopherjobs/gopherjobs.github.io/internal/job_reader"
 	"log"
 	"log/slog"
 )
