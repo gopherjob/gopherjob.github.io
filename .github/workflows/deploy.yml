@@ -2,11 +2,8 @@ name: Job Scan Pipeline
 
 on:
   schedule:
-    - cron: "0 */24 * * *"
+    - cron: "0 18 * * *"
   workflow_dispatch:
-  push:
-    branches:
-      - main
 jobs:
   job-scan:
     runs-on: ubuntu-latest

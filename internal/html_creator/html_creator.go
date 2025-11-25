@@ -70,7 +70,7 @@ func (h *htmlCreator) Generate(jobs []*entity.Job, outputPath string) error {
 			"Page":       p,
 			"TotalPages": pages,
 			"MyLink":     "https://github.com/milad-rasouli",
-			"Footer":     "Create by Milad Rasouli",
+			"Footer":     "Created by Milad Rasouli",
 		}
 
 		outFile := filepath.Join(htmlDir, fmt.Sprintf("list%d.html", p))
@@ -100,7 +100,7 @@ func (h *htmlCreator) Generate(jobs []*entity.Job, outputPath string) error {
 			"CreatedAt": createdAt,
 			"Job":       job,
 			"MyLink":    "https://github.com/milad-rasouli",
-			"Footer":    "Create by Milad Rasouli",
+			"Footer":    "Created by Milad Rasouli",
 		}
 
 		outFile := filepath.Join(jobsDir, fmt.Sprintf("%s.html", job.ID))
