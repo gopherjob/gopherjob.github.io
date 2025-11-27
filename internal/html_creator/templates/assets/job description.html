@@ -29,8 +29,8 @@
 <body>
 <div class="wrap">
     <h1>{{ .Job.Title }}</h1>
-    <div class="meta">Company: {{ .Job.Company }} • Location: {{ .Job.Location }} • Type: {{ .Job.Type }}</div>
-    <div class="meta">Created: <span id="createdAt">{{ .CreatedAt }}</span></div>
+    <div class="meta">{{ .Job.Company }} • {{ .Job.Location }} • {{ .Job.Type }}</div>
+    <div class="meta">Updated: <span id="createdAt">{{ .CreatedAt }}</span></div>
 
     <div class="section apply-section">
         <a class="back" href="../list1.html">Back to Home</a>
