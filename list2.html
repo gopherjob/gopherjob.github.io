@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Gopher Jobs</title>
+    <style>
+        body {
+            font-family: Inter, Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f7fafc;
+            color: #1a202c;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 24px auto;
+            padding: 16px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(10,20,30,0.06);
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .meta {
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        .jobs { margin-top: 20px; }
+
+        .job {
+            padding: 14px;
+            border-bottom: 1px solid #eef2f7;
+        }
+
+        .job a {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .job .title {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .job .metaSmall {
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        .additional {
+            margin-top: 4px;
+            font-size: 13px;
+            color: #4b5563;
+        }
+
+        .badges {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            align-items: flex-end;
+        }
+
+        .badge {
+            background: #eef2ff;
+            color: #1e40af;
+            padding: 4px 8px;
+            border-radius: 999px;
+            font-size: 12px;
+        }
+
+         
+        nav.pagination {
+            display: flex;
+            gap: 6px;
+            justify-content: center;
+            margin-top: 22px;
+            flex-wrap: wrap;
+        }
+
+        nav.pagination a,
+        nav.pagination span {
+            padding: 8px 12px;
+            background: #e6eef8;
+            border-radius: 6px;
+            text-decoration: none;
+            color: #0f172a;
+            font-size: 14px;
+        }
+
+        nav.pagination .current {
+            background: #0ea5a6;
+            color: #fff;
+        }
+
+        nav.pagination .dots {
+            background: transparent;
+            color: #94a3b8;
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 22px; }
+            .job .title { font-size: 16px; }
+            .metaSmall, .additional { font-size: 13px; }
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <header>
+        <div>
+            <h1>Gopher Jobs</h1>
+            <div class="meta">Updated: <span id="createdAt">1765045921</span></div>
+        </div>
+        <div class="meta">Page 2 / 5</div>
+    </header>
+
+    <section class="jobs">
+        
+        <div class="job">
+            <a href="jobs/li-4342482065.html">
+                <div>
+                    <div class="title">Mid-Level Golang Developer - Remote - Latin America</div>
+                    <div class="metaSmall">FullStack • La Plata, Buenos Aires Province, Argentina • fulltime</div>
+                    <div class="additional">associate • IT Services and IT Consulting, Computer and Network Security, and Information Services</div>
+                </div>
+                <div class="badges">
+                    <div class="badge">Remote</div>
+                    
+                </div>
+            </a>
+        </div>
+        
+        <div class="job">
+            <a href="jobs/li-4348486721.html">
+                <div>
+                    <div class="title">Golang Developer - Relocation to Spain</div>
+                    <div class="metaSmall">Capitole •  • fulltime</div>
+                    <div class="additional">mid-senior level • IT Services and IT Consulting</div>
+                </div>
+                <div class="badges">
+                    <div class="badge">Remote</div>
+                    <div class="badge">Relocation</div>
+                </div>
+            </a>
+        </div>
+        
+        <div class="job">
+            <a href="jobs/li-4342352552.html">
+                <div>
+                    <div class="title">Mid-Level Golang Developer - Remote - Latin America</div>
+                    <div class="metaSmall">FullStack • Buenos Aires, Buenos Aires Province, Argentina • fulltime</div>
+                    <div class="additional">associate • IT Services and IT Consulting, Computer and Network Security, and Information Services</div>
+                </div>
+                <div class="badges">
+                    <div class="badge">Remote</div>
+                    
+                </div>
+            </a>
+        </div>
+        
+        <div class="job">
+            <a href="jobs/li-4342511896.html">
+                <div>
+                    <div class="title">Mid-Level Golang Developer - Remote - Latin America</div>
+                    <div class="metaSmall">FullStack • Cordoba, Córdoba, Argentina • fulltime</div>
+                    <div class="additional">associate • IT Services and IT Consulting, Computer and Network Security, and Information Services</div>
+                </div>
+                <div class="badges">
+                    <div class="badge">Remote</div>
+                    
+                </div>
+            </a>
+        </div>
+        
+        <div class="job">
+            <a href="jobs/li-4342482065.html">
+                <div>
+                    <div class="title">Mid-Level Golang Developer - Remote - Latin America</div>
+                    <div class="metaSmall">FullStack • La Plata, Buenos Aires Province, Argentina • fulltime</div>
+                    <div class="additional">associate • IT Services and IT Consulting, Computer and Network Security, and Information Services</div>
+                </div>
+                <div class="badges">
+                    <div class="badge">Remote</div>
+                    
+                </div>
+            </a>
+        </div>
+        
+        <div class="job">
+            <a href="jobs/li-4342491928.html">
+                <div>
+                    <div class="title">Mid-Level Golang Developer - Remote - Latin America</div>
+                    <div class="metaSmall">FullStack • Rosario, Santa Fe, Argentina • fulltime</div>
+                    <div class="additional">associate • IT Services and IT Consulting, Computer and Network Security, and Information Services</div>
+                </div>
+                <div class="badges">
+                    <div class="badge">Remote</div>
+                    
+                </div>
+            </a>
+        </div>
+        
+        <div class="job">
+            <a href="jobs/li-4342511893.html">
+                <div>
+                    <div class="title">Mid-Level Golang Developer - Remote - Latin America</div>
+                    <div class="metaSmall">FullStack • Mar del Plata, Buenos Aires Province, Argentina • fulltime</div>
+                    <div class="additional">associate • IT Services and IT Consulting, Computer and Network Security, and Information Services</div>
+                </div>
+                <div class="badges">
+                    <div class="badge">Remote</div>
+                    
+                </div>
+            </a>
+        </div>
+        
+        <div class="job">
+            <a href="jobs/li-4342442138.html">
+                <div>
+                    <div class="title">Mid-Level Golang Developer - Remote - Latin America</div>
+                    <div class="metaSmall">FullStack • Salta, Salta, Argentina • fulltime</div>
+                    <div class="additional">associate • IT Services and IT Consulting, Computer and Network Security, and Information Services</div>
+                </div>
+                <div class="badges">
+                    <div class="badge">Remote</div>
+                    
+                </div>
+            </a>
+        </div>
+        
+        <div class="job">
+            <a href="jobs/li-4342471935.html">
+                <div>
+                    <div class="title">Mid-Level Golang Developer - Remote - Latin America</div>
+                    <div class="metaSmall">FullStack • Brasília, Federal District, Brazil • fulltime</div>
+                    <div class="additional">associate • IT Services and IT Consulting, Computer and Network Security, and Information Services</div>
+                </div>
+                <div class="badges">
+                    <div class="badge">Remote</div>
+                    
+                </div>
+            </a>
+        </div>
+        
+        <div class="job">
+            <a href="jobs/li-4348367848.html">
+                <div>
+                    <div class="title">Golang Developer - Relocation to Spain</div>
+                    <div class="metaSmall">Capitole •  • fulltime</div>
+                    <div class="additional">mid-senior level • IT Services and IT Consulting</div>
+                </div>
+                <div class="badges">
+                    <div class="badge">Remote</div>
+                    <div class="badge">Relocation</div>
+                </div>
+            </a>
+        </div>
+        
+        <div class="job">
+            <a href="jobs/li-4230199169.html">
+                <div>
+                    <div class="title">Golang Developer - Remote - Latin America</div>
+                    <div class="metaSmall">FullStack • São Paulo, São Paulo, Brazil • fulltime</div>
+                    <div class="additional">mid-senior level • IT Services and IT Consulting, Computer and Network Security, and Information Services</div>
+                </div>
+                <div class="badges">
+                    <div class="badge">Remote</div>
+                    
+                </div>
+            </a>
+        </div>
+        
+        <div class="job">
+            <a href="jobs/li-4230199177.html">
+                <div>
+                    <div class="title">Golang Developer - Remote - Latin America</div>
+                    <div class="metaSmall">FullStack • Curitiba, Paraná, Brazil • fulltime</div>
+                    <div class="additional">mid-senior level • IT Services and IT Consulting, Computer and Network Security, and Information Services</div>
+                </div>
+                <div class="badges">
+                    <div class="badge">Remote</div>
+                    
+                </div>
+            </a>
+        </div>
+        
+        <div class="job">
+            <a href="jobs/li-4230194862.html">
+                <div>
+                    <div class="title">Golang Developer - Remote - Latin America</div>
+                    <div class="metaSmall">FullStack • Belo Horizonte, Minas Gerais, Brazil • fulltime</div>
+                    <div class="additional">mid-senior level • IT Services and IT Consulting, Computer and Network Security, and Information Services</div>
+                </div>
+                <div class="badges">
+                    <div class="badge">Remote</div>
+                    
+                </div>
+            </a>
+        </div>
+        
+        <div class="job">
+            <a href="jobs/li-4230199173.html">
+                <div>
+                    <div class="title">Golang Developer - Remote - Latin America</div>
+                    <div class="metaSmall">FullStack • Fortaleza, Ceará, Brazil • fulltime</div>
+                    <div class="additional">mid-senior level • IT Services and IT Consulting, Computer and Network Security, and Information Services</div>
+                </div>
+                <div class="badges">
+                    <div class="badge">Remote</div>
+                    
+                </div>
+            </a>
+        </div>
+        
+        <div class="job">
+            <a href="jobs/li-4230193973.html">
+                <div>
+                    <div class="title">Golang Developer - Remote - Latin America</div>
+                    <div class="metaSmall">FullStack • Goiânia, Goiás, Brazil • fulltime</div>
+                    <div class="additional">mid-senior level • IT Services and IT Consulting, Computer and Network Security, and Information Services</div>
+                </div>
+                <div class="badges">
+                    <div class="badge">Remote</div>
+                    
+                </div>
+            </a>
+        </div>
+        
+        <div class="job">
+            <a href="jobs/li-4342342568.html">
+                <div>
+                    <div class="title">Mid-Level Golang Developer - Remote - Latin America</div>
+                    <div class="metaSmall">FullStack •  • fulltime</div>
+                    <div class="additional">associate • IT Services and IT Consulting, Computer and Network Security, and Information Services</div>
+                </div>
+                <div class="badges">
+                    <div class="badge">Remote</div>
+                    
+                </div>
+            </a>
+        </div>
+        
+        <div class="job">
+            <a href="jobs/li-4342412252.html">
+                <div>
+                    <div class="title">Mid-Level Golang Developer - Remote - Latin America</div>
+                    <div class="metaSmall">FullStack • Belo Horizonte, Minas Gerais, Brazil • fulltime</div>
+                    <div class="additional">associate • IT Services and IT Consulting, Computer and Network Security, and Information Services</div>
+                </div>
+                <div class="badges">
+                    <div class="badge">Remote</div>
+                    
+                </div>
+            </a>
+        </div>
+        
+        <div class="job">
+            <a href="jobs/li-4342452140.html">
+                <div>
+                    <div class="title">Mid-Level Golang Developer - Remote - Latin America</div>
+                    <div class="metaSmall">FullStack • Curitiba, Paraná, Brazil • fulltime</div>
+                    <div class="additional">associate • IT Services and IT Consulting, Computer and Network Security, and Information Services</div>
+                </div>
+                <div class="badges">
+                    <div class="badge">Remote</div>
+                    
+                </div>
+            </a>
+        </div>
+        
+        <div class="job">
+            <a href="jobs/li-4342461974.html">
+                <div>
+                    <div class="title">Mid-Level Golang Developer - Remote - Latin America</div>
+                    <div class="metaSmall">FullStack • São Paulo, São Paulo, Brazil • fulltime</div>
+                    <div class="additional">associate • IT Services and IT Consulting, Computer and Network Security, and Information Services</div>
+                </div>
+                <div class="badges">
+                    <div class="badge">Remote</div>
+                    
+                </div>
+            </a>
+        </div>
+        
+        <div class="job">
+            <a href="jobs/li-4342452139.html">
+                <div>
+                    <div class="title">Mid-Level Golang Developer - Remote - Latin America</div>
+                    <div class="metaSmall">FullStack • Recife, Pernambuco, Brazil • fulltime</div>
+                    <div class="additional">associate • IT Services and IT Consulting, Computer and Network Security, and Information Services</div>
+                </div>
+                <div class="badges">
+                    <div class="badge">Remote</div>
+                    
+                </div>
+            </a>
+        </div>
+        
+    </section>
+
+    <nav class="pagination">
+        
+        
+
+        
+        <a href="list1.html">Prev</a>
+        
+
+        
+        <a href="list1.html" >1</a>
+
+        
+        
+
+        
+        
+        
+        
+        
+        <span class="current">2</span>
+        
+        
+        
+        <a href="list3.html">3</a>
+        
+        
+
+        
+        
+
+        
+        
+        <a href="list5.html" >5</a>
+        
+
+        
+        <a href="list3.html">Next</a>
+        
+    </nav>
+
+    <footer>
+        <a href="https://github.com/milad-rasouli">Created by Milad Rasouli</a>
+    </footer>
+</div>
+
+<script>
+    (function(){
+        const el = document.getElementById('createdAt');
+        if(!el) return;
+        const ts = Number(el.textContent) * 1000;
+        el.textContent = new Date(ts).toLocaleString();
+    })();
+</script>
+</body>
+</html>
